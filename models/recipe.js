@@ -6,7 +6,11 @@ const recipeSchema = new Schema({
         type: String,
         required: true
     },
-    ingedients: {
+    image: {
+        type: String,
+        required: false
+    },
+    ingredients: {
         type: String,
         required: true
     },

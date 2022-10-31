@@ -1,8 +1,21 @@
 <%- include('../partials/header') %>
 
 <form id="newRecipe" action="/recipes" method="POST">
-
-    
+    <label>Recipe Title:</label>
+    <input type="text" name="name">
+    <br>
+    <label>Picture of Recipe(Please enter link to image):</label>
+    <input type="text" name="image">
+    <br>
+    <label for="ingredients">Ingredients(seperate by a comma):</label>
+    <br>
+    <textarea name="ingredients" id="ingredients" cols="30" rows="10"></textarea>
+    <br>
+    <label for="instuctions">Instructions:</label>
+    <br>
+    <textarea name="instructions" id="instructions" cols="30" rows="10"></textarea>
+    <br>
+    <button type="submit">Add Recipe</button>
 </form>
 
 <%- include('../partials/footer') %>

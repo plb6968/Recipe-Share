@@ -1,2 +1,8 @@
 <%- include('../partials/header') %>
+
+<% recipes.forEach(function(recipe) { %>
+    <div><%= recipe.name %></div>
+    <a href="/recipes/<%= recipe._id %>">Details</a>
+<% }) %>
+
 <%- include('../partials/footer') %>
