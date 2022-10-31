@@ -4,8 +4,10 @@ module.exports = {
     index,
     new: newRecipe,
     create,
-    show
+    show, 
+    myRecipes
 }
+
 
 function index(req, res) {
     Recipe.find({}, function(err, recipes) {
@@ -26,8 +28,18 @@ function newRecipe(req, res) {
 function create(req, res) {
     console.log('create triggered');
     const recipe = new Recipe(req.body);
+    recipe.user = req.user._id;
+    recipe.userName = req.user.name;
+    recipe.ingredients = req.body.ingredients.split(',');
+    recipe.instructions = req.body.instructions.split(',');
     console.log(recipe);
     recipe.save(function(err) {
         res.redirect(`/recipes/${recipe._id}`);
     })
+}
+
+function myRecipes(req, res) {
+    Recipe.find({ user: req.user._id }, function(err, recipes) {
+        res.render('recipes/myRecipes', { title:`${req.user.name}'s Recipes`, recipes });
+    });
 }

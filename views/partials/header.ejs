@@ -9,6 +9,7 @@
     <a href="/recipes">All Recipes</a>
     <% if(user) { %>
         <a href="/recipes/new">Add a Recipe</a>
+        <a href="/recipes/myRecipes"><%= user.name %></div></a>
         <a href="/logout">LOG OUT</a>
     <%  } else { %>
         <a href="/auth/google" class="login">LOG IN</a>

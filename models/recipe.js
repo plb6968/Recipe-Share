@@ -11,12 +11,20 @@ const recipeSchema = new Schema({
         required: false
     },
     ingredients: {
-        type: String,
+        type: [],
         required: true
     },
     instructions: {
-        type: String,
+        type: [],
         required: true
+    },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
+    userName: {
+        type: String
     }
 });
 

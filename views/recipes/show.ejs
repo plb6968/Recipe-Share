@@ -2,10 +2,21 @@
 
 <div><%= recipe.name %></div>
 <br>
+<div>Creator</div>
+<div><%= recipe.userName %></div>
+<% if(recipe.image) { %>
+    <br>
+    <img src="<%= recipe.image %>" alt="recipe image">
+<% } %>
+<br>
 <div>Ingredients</div>
-<div><%= recipe.ingredients%></div>
+<% recipe.ingredients.forEach(function(ingredient, i) { %>
+    <div><%= i + 1 %>) <%= ingredient %></div>
+<% }); %>
 <br>
 <div>Instructions</div>
-<div><%= recipe.instructions%></div>
+<% recipe.instructions.forEach(function(instruction, i) { %>
+    <div><%= i + 1 %>) <%= instruction %></div>
+<% }); %>
 
 <%- include('../partials/footer') %>
