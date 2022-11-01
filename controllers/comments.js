@@ -1,7 +1,8 @@
 const Recipe = require('../models/recipe');
 
 module.exports = {
-    create
+    create,
+    delete: deleteComment
 };
 
 function create(req, res) {
@@ -14,4 +15,17 @@ function create(req, res) {
             res.redirect(`/recipes/${recipe._id}`);
         });
     });
+}
+
+function deleteComment(req, res) {
+    Recipe.findOne(
+        { 'comments._id': req.params.id, 'comments.user': req.user._id },
+        function(err, recipe) {
+            if (!recipe || err) return res.redirect(`/recipes/${recipe._id}`);
+            recipe.comments.remove(req.params.id);
+            recipe.save(function(err) {
+                res.redirect(`/recipes/${recipe._id}`);
+            });
+        }
+    );
 }

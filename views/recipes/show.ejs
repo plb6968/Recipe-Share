@@ -33,6 +33,11 @@
                 <tr>
                     <td><%= comment.userName %></td>
                     <td><%= comment.comment %></td>
+                    <% if (user && comment.user.equals(user._id)) { %>
+                        <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                            <td><button type="submit">Delete</button></td>
+                        </form>
+                    <% } %>
                 </tr>
             <% }) %>
         </tbody>
