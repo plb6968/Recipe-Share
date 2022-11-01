@@ -30,8 +30,8 @@ function create(req, res) {
     const recipe = new Recipe(req.body);
     recipe.user = req.user._id;
     recipe.userName = req.user.name;
-    recipe.ingredients = req.body.ingredients.split(',');
-    recipe.instructions = req.body.instructions.split(',');
+    recipe.ingredients = req.body.ingredients.split(';');
+    recipe.instructions = req.body.instructions.split(';');
     console.log(recipe);
     recipe.save(function(err) {
         res.redirect(`/recipes/${recipe._id}`);
