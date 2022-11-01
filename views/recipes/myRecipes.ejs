@@ -1,7 +1,13 @@
 <%- include('../partials/header') %>
 
-<% recipes.forEach(function(recipe) { %>
-    <div><%= recipe.name %><a href="/recipes/<%= recipe._id %>"> Details</a></div>
-<% }); %>
+<% if(!recipes.length) { %>
+    <div>No recipes yet.</div>
+<% } %>
+
+<% if(recipes.length) { %>
+    <% recipes.forEach(function(recipe) { %>
+        <div><%= recipe.name %><a href="/recipes/<%= recipe._id %>"> Details</a></div>
+    <% }); %>
+<% } %>
 
 <%- include('../partials/footer') %>
