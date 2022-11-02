@@ -2,6 +2,11 @@
 
 <div><%= recipe.name %></div>
 <br>
+<% if(user && recipe.user.equals(user._id)) { %>
+    <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete Recipe</button>
+    </form>
+<% } %>
 <div>Creator</div>
 <div><%= recipe.userName %></div>
 <% if(recipe.image) { %>
@@ -34,6 +39,7 @@
                     <td><%= comment.userName %></td>
                     <td><%= comment.comment %></td>
                     <% if (user && comment.user.equals(user._id)) { %>
+                        <td><a href="/recipes/<%= comment._id %>/comments">Edit</a></td>
                         <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
                             <td><button type="submit">Delete</button></td>
                         </form>

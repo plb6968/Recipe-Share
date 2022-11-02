@@ -4,10 +4,10 @@ module.exports = {
     index,
     new: newRecipe,
     create,
-    show, 
-    myRecipes
+    show,
+    myRecipes,
+    delete: deleteRecipe 
 }
-
 
 function index(req, res) {
     Recipe.find({}, function(err, recipes) {
@@ -36,6 +36,15 @@ function create(req, res) {
     recipe.save(function(err) {
         res.redirect(`/recipes/${recipe._id}`);
     })
+}
+
+function deleteRecipe(req, res) {
+    console.log('DELETE STARTED');
+    Recipe.findOneAndDelete(
+        {_id: req.params.id, user: req.user._id}, function(err) {
+            res.redirect('/recipes');
+        }
+    );
 }
 
 function myRecipes(req, res) {

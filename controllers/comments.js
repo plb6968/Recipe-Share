@@ -2,8 +2,18 @@ const Recipe = require('../models/recipe');
 
 module.exports = {
     create,
-    delete: deleteComment
+    delete: deleteComment,
+    edit,
+    update
 };
+
+function edit(req, res) {
+    console.log('Show Triggered');
+    Recipe.findOne({'comments._id': req.params.id}, function(err, recipe) {
+        const comment = recipe.comments.id(req.params.id);
+        res.render('recipes/edit', { title: 'Comment Details', comment });
+    });
+}
 
 function create(req, res) {
     Recipe.findById(req.params.id, function(err, recipe) {
@@ -28,4 +38,15 @@ function deleteComment(req, res) {
             });
         }
     );
+}
+
+function update(req, res) {
+    Recipe.findOne({'comments._id': req.params.id}, function(err, recipe) {
+        const comment = recipe.comments.id(req.params.id);
+        if (!comment.user.equals(req.user._id)) return res.redirect(`/recipes/${recipe._id}`);
+        comment.comment = req.body.comment;
+        recipe.save(function(err) {
+            res.redirect(`/recipes/${recipe._id}`);
+        });
+    });
 }
