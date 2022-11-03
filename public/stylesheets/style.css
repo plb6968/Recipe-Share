@@ -1,8 +1,35 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(63, 78, 79);
+  color: rgb(220, 215, 201);
 }
 
-a {
-  color: #00B7FF;
+.nav-link {
+  color: rgb(220, 215, 201);
 }
+
+.navlink:hover {
+  color: rgb(162, 123, 92);
+}
+
+nav {
+  background-color: rgb(44, 54, 57);
+}
+
+input {
+  background-color: rgb(44, 54, 57);
+  color: rgb(220, 215, 201);
+}
+
+textarea {
+  background-color: rgb(44, 54, 57);
+  color: rgb(220, 215, 201);
+}
+
+button {
+  background-color: rgb(44, 54, 57);
+  color: rgb(220, 215, 201);
+}
+
+

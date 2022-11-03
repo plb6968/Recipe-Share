@@ -11,7 +11,7 @@ function edit(req, res) {
     console.log('Show Triggered');
     Recipe.findOne({'comments._id': req.params.id}, function(err, recipe) {
         const comment = recipe.comments.id(req.params.id);
-        res.render('recipes/edit', { title: 'Comment Details', comment });
+        res.render('recipes/edit', { title: 'Edit Comment', comment });
     });
 }
 

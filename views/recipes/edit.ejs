@@ -1,6 +1,5 @@
 <%- include('../partials/header') %>
 
-<h3>edit page</h3>
 <form action="/recipes/<%= comment._id %>/comments?_method=PUT" method="POST">
     <input type="text" name="comment" value="<%= comment.comment %>">
     <button type="submit">Update Comment</button>

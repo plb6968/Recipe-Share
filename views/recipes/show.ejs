@@ -14,12 +14,12 @@
     <img src="<%= recipe.image %>" alt="recipe image">
 <% } %>
 <br>
-<div>Ingredients</div>
+<h3>Ingredients</h3>
 <% recipe.ingredients.forEach(function(ingredient, i) { %>
     <div><%= i + 1 %>) <%= ingredient %></div>
 <% }); %>
 <br>
-<div>Instructions</div>
+<h3>Instructions</h3>
 <% recipe.instructions.forEach(function(instruction, i) { %>
     <div><%= i + 1 %>) <%= instruction %></div>
 <% }); %>
