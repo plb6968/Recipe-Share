@@ -6,7 +6,11 @@
 
 <% if(recipes.length) { %>
     <% recipes.forEach(function(recipe) { %>
-        <div><%= recipe.name %><a href="/recipes/<%= recipe._id %>"> Details</a></div>
+        <div class="text-center" >
+            <%= recipe.name %>
+            <img src="<%= recipe.image %>" alt="Image of recipe" class="index-img">
+            <a href="/recipes/<%= recipe._id %>" class="details"> Details</a>
+        </div>
     <% }); %>
 <% } %>
 

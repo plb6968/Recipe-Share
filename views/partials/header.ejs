@@ -9,15 +9,18 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <nav class="nav">
-      <a class="nav-link" href="/">Home</a>
-      <a class="nav-link" href="/recipes">All Recipes</a>
-      <% if(user) { %>
+    <header>
+      <nav class="nav">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/recipes">All Recipes</a>
+        <% if(user) { %>
           <a class="nav-link" href="/recipes/new">Add a Recipe</a>
           <a class="nav-link" href="/recipes/myRecipes"><%= user.name %></div></a>
-          <a class="nav-link" href="/logout">LOG OUT</a>
-      <%  } else { %>
-          <a class="nav-link" href="/auth/google" class="login">LOG IN</a>
-      <% } %>
-    </nav>
-    <h2><%= title %></h2>
+          <a class="nav-link" id="log" href="/logout">LOG OUT</a>
+        <%  } else { %>
+          <a class="nav-link" id="log" href="/auth/google">LOG IN</a>
+         <% } %>
+      </nav>
+    </header> 
+    
+    <h2 class="text-center" id="page-title"><%= title %></h2>

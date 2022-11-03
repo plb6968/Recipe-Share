@@ -1,14 +1,15 @@
 <%- include('../partials/header') %>
 
-<div><%= recipe.name %></div>
-<br>
+
 <% if(user && recipe.user.equals(user._id)) { %>
-    <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
-        <button type="submit">Delete Recipe</button>
+    <form class="delete-form" action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
+        <button class="delete" type="submit">Delete Recipe</button>
     </form>
 <% } %>
-<div>Creator</div>
-<div><%= recipe.userName %></div>
+<div>
+    Creator: &nbsp
+    <%= recipe.userName %>
+</div>
 <% if(recipe.image) { %>
     <br>
     <img src="<%= recipe.image %>" alt="recipe image">

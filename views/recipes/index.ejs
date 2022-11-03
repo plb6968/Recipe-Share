@@ -1,12 +1,14 @@
 <%- include('../partials/header') %>
 
 <% recipes.forEach(function(recipe) { %>
-    <div>
-        <%= recipe.name %>  
-        <a href="/recipes/<%= recipe._id %>">Details</a>
+    <div class="text-center" id="recipe-index">
+        <%= recipe.name %>
+        &nbsp
+        &nbsp  
         Created by: <%= recipe.userName %>
+        <img src="<%= recipe.image %>" alt="Image of recipe" class="index-img"> 
+        <a class="details" href="/recipes/<%= recipe._id %>">  Details</a>   
     </div>
-    
 <% }) %>
 
 <%- include('../partials/footer') %>
