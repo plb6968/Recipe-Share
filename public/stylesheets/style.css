@@ -50,6 +50,7 @@ a {
 button {
   background-color: rgb(44, 54, 57);
   color: rgb(220, 215, 201);
+  border-radius: 15%;
 }
 
 button:hover {
@@ -83,6 +84,7 @@ img {
   margin-left: 20px;
   padding: 5px;
   background-color: rgb(44, 54, 57);
+  border-radius: 15%;
 }
 
 .details:hover {
@@ -98,6 +100,15 @@ img {
 .delete-form {
   display: flex;
   justify-content: flex-end;
+}
+
+#recipe-index {
+  padding-top: 20px;
+}
+
+.button {
+  border: none;
+  height: 25px;
 }
 
 
