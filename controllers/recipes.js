@@ -11,7 +11,7 @@ module.exports = {
 
 function index(req, res) {
     Recipe.find({}, function(err, recipes) {
-        res.render('recipes/index', {title: 'All Recipes', recipes})
+        res.render('recipes/index', { title: 'All Recipes', recipes })
     });
 }
 
@@ -22,7 +22,7 @@ function show(req, res) {
 }
 
 function newRecipe(req, res) {
-    res.render('recipes/new', {title: 'Add a New Recipe'});
+    res.render('recipes/new', { title: 'Add a New Recipe' });
 }
 
 function create(req, res) {
