@@ -15,7 +15,7 @@ The home page greets the user andd provides them with a mission statement for th
 
 The all recipes page displays the name, creator and an imgage of each recipe posted on the application. The user can also click a link to each recipes details, which will display each recipe full post.  
 
-![All Recipes](./readme-images/add-recipes.png)
+![All Recipes](./readme-images/add-recipe.png)
 
 After the user has logged in, they can add a recipe.  
 
