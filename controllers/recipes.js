@@ -11,7 +11,7 @@ module.exports = {
 
 function index(req, res) {
     Recipe.find({}, function(err, recipes) {
-        res.render('recipes/index', { title: 'All Recipes', recipes })
+        res.render('recipes/index', { title: 'All Recipes', recipes });
     });
 }
 
@@ -26,7 +26,6 @@ function newRecipe(req, res) {
 }
 
 function create(req, res) {
-    console.log('create triggered');
     const recipe = new Recipe(req.body);
     recipe.user = req.user._id;
     recipe.userName = req.user.name;
@@ -35,11 +34,10 @@ function create(req, res) {
     console.log(recipe);
     recipe.save(function(err) {
         res.redirect(`/recipes/${recipe._id}`);
-    })
+    });
 }
 
 function deleteRecipe(req, res) {
-    console.log('DELETE STARTED');
     Recipe.findOneAndDelete(
         {_id: req.params.id, user: req.user._id}, function(err) {
             res.redirect('/recipes');
