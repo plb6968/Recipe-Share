@@ -1,11 +1,11 @@
 var express = require('express');
 var router = express.Router();
 const passport = require('passport');
-const Recipe = require('../models/recipes');
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('home', { title: 'Recipe Share', recipes });
+    res.render('home', { title: 'Recipe Share' });
 });
 
 // Google OAuth login route
