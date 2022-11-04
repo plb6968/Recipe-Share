@@ -2,6 +2,7 @@
 Recipe share is a web application designed for cooking enthusiasts to post and store their favorite recipes.  A user can post their recipes with an image, view their recipes, view other users recipes, and post comments on each recipe.  
 
 [Recipe Share](https://recipe-share-oo.herokuapp.com/)
+[Project Planning](https://trello.com/b/iPClgZIf/project-2)
 
 I designed the site with a simple and elegant color scheme that is continuos throughout.
 
