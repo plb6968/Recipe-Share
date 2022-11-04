@@ -5,9 +5,7 @@ const Recipe = require('../models/recipes');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  Recipe.find(req.params.id, function(err, recipes){
     res.render('home', { title: 'Recipe Share', recipes });
-  });
 });
 
 // Google OAuth login route
